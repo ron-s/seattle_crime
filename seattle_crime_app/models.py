@@ -4,17 +4,17 @@ from django.contrib.gis.db import models
 # Create your models here.
 class CrimeModel(models.Model):
     eventid = models.CharField(max_length=21)
-    eventcode = models.IntegerField()
-    descriptio = models.CharField(max_length=254)
-    subgroup = models.CharField(max_length=254)
+    description = models.CharField(max_length=254)
+    event_date = models.DateTimeField(max_length=254)
     group = models.CharField(max_length=254)
-    date = models.DateTimeField(max_length=254)
-    location = models.CharField(max_length=254)
+    subgroup = models.CharField(max_length=254)
+    offense_num = models.CharField(max_length=15)
+    block_location = models.CharField(max_length=254)
+    zone_beat = models.CharField(max_length=5)
     longitude = models.FloatField()
     latitude = models.FloatField()
-    wkt = models.CharField(max_length=254)
-    geom = models.PointField(srid=-1)
+
 
 
     def __str__(self):
-    	return 'Event ID:' + " " + str(self.eventid) + " " + 'Offense Description: ' + self.descriptio
+    	return 'Event ID: ' + " " + str(self.eventid) + " " + 'Offense Description: ' + self.description
