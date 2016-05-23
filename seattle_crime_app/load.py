@@ -4,17 +4,21 @@ from .models import CrimeModel
 
 crime_mapping = {
     #remember 10 character limit
-    'eventid': 'EventID',
-    'eventcode': 'EventCode',
-    'descriptio': 'Descriptio',
-    'subgroup': 'SubGroup',
-    'group': 'Group',
-    'date': 'Date',
-    'location': 'Location',
-    'longitude': 'Longitude',
-    'latitude': 'Latitude',
-    'wkt': 'WKT',
-    'geom': 'POINT', 
+    'cadcdwid': 'cadcdwid',
+    'eventnum': 'eventnum',
+    'offensenum': 'offensenum',
+    'clearance': 'clearance',
+    'date': 'date',
+    'descriptio': 'descriptio',
+    'subgroup': 'subgroup',
+    'group': 'group',
+    'blocklocat': 'blocklocat',
+    'district': 'district',
+    'zonebeat': 'zonebeat',
+    'location': 'location',
+    'longitude': 'longitude',
+    'latitude': 'latitude',
+    'geom': 'POINT',
 }
 
 # Copypaste from geodjango tutorial.

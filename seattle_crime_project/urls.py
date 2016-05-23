@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from seattle_crime_app import views as seattle_crime_app_views
+from rest_framework import routers
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'seattle_crime_app_crimemodel', seattle_crime_app_views.Crime2014DataViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', seattle_crime_app_views.home_page),
+    url(r'^seattle_crime_app/', include(router.urls)),
 ]
