@@ -23,4 +23,6 @@ seattle_crime_project/hidden.py
 # Virtual Environment
 seattle_crime_venv/
 
+seattle_crime_app/data/
+
 .DS_Store
