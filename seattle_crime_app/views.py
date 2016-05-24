@@ -12,8 +12,8 @@ REST GIS framework.
 class CrimeDataViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = ('date', 'descritio', 'blocklocat', 'latitude', 'longitude',)
-    class Meta:
-        abstract=True
+    # class Meta:
+    #     abstract=True
 
 
 class Crime2014DataViewSet(CrimeDataViewSet):

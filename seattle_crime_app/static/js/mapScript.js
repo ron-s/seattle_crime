@@ -3,7 +3,7 @@ var markers = [];
 function renderMap(checkboxID){
 
   $.ajax({
-      url: "http://localhost:8000/pdx_crime_app/pdx_crime_app_crimemodeltemplate?format=json&offense=" + checkboxID ,
+      url: "http://localhost:8000/seattle_crime_app/seattle_crime_app_crimemodeltemplate?format=json&group=" + checkboxID ,
       type: 'GET',
       headers : {Accept: 'application/json'},
       dataType: 'json',
@@ -11,13 +11,13 @@ function renderMap(checkboxID){
           data.features.forEach(function (obj) {
           
           var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(obj.properties.ycoordi, obj.properties.xcoordi),
+              position: new google.maps.LatLng(obj.properties.latitude, obj.properties.longitude),
               map: map,
-              title: "offense"
+              title: "description"
               });
           markers.push(marker);
 
-          var content = '<div class="infowindow"><b>' + obj.properties.offense + '</b></div>' + '<div class="infowindow">' + obj.properties.date + '</div>' + '<div class="infowindow">' + obj.properties.time + '</div>' + '<div class="infowindow">' + obj.properties.neighborhd + '</div>';
+          var content = '<div class="infowindow"><b>' + obj.properties.descriptio + '</b></div>' + '<div class="infowindow">' + obj.properties.date + '</div>' + '<div class="infowindow">' + obj.properties.group + '</div>' + '<div class="infowindow">' + obj.properties.blocklocat + '</div>';
 
             var infowindow = new google.maps.InfoWindow();
             // add a click event listener when the user clicks on a marker to display the infowindow
@@ -36,7 +36,7 @@ function renderMap(checkboxID){
   });
 }
 
-var center = new google.maps.LatLng(45.5200, -122.6819);
+var center = new google.maps.LatLng(47.608013, -122.335167);
     var mapOptions = {
       zoom: 12,
       center: center
