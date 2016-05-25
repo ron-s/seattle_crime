@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'seattle_crime_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'seattlecrime',
+        'NAME': 'sea911',
         'USER': 'crimeuser',
         'PASSWORD': password,
         'HOST': 'localhost',

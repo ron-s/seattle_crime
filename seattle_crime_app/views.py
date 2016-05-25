@@ -11,14 +11,18 @@ REST GIS framework.
 """
 class CrimeDataViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('date', 'descritio', 'blocklocat', 'latitude', 'longitude',)
-    # class Meta:
-    #     abstract=True
-
-
-class Crime2014DataViewSet(CrimeDataViewSet):
+    filter_fields = ('group', 'date', 'descriptio', 'block', 'latitude', 'longitude',)
     queryset = CrimeModel.objects.all()
     serializer_class = CrimeDataSerializer
+
+    class Meta:
+        model = CrimeModel
+        abstract=True
+
+
+# class Crime2014DataViewSet(CrimeDataViewSet):
+#     queryset = CrimeModel.objects.all()
+#     serializer_class = CrimeDataSerializer
 
 
 # class Crime2013DataViewSet(CrimeDataViewSet):

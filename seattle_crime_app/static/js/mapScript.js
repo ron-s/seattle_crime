@@ -3,7 +3,7 @@ var markers = [];
 function renderMap(checkboxID){
 
   $.ajax({
-      url: "http://localhost:8000/seattle_crime_app/seattle_crime_app_crimemodeltemplate?format=json&group=" + checkboxID ,
+      url: "http://localhost:8000/seattle_crime_app/seattle_crime_app_crimemodel?format=json&group=" + checkboxID ,
       type: 'GET',
       headers : {Accept: 'application/json'},
       dataType: 'json',

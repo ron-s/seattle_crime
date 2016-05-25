@@ -4,25 +4,26 @@ from .models import CrimeModel
 
 crime_mapping = {
     #remember 10 character limit
-    'cadcdwid': 'cadcdwid',
-    'eventnum': 'eventnum',
-    'offensenum': 'offensenum',
-    'clearance': 'clearance',
-    'date': 'date',
-    'descriptio': 'descriptio',
-    'subgroup': 'subgroup',
-    'group': 'group',
-    'blocklocat': 'blocklocat',
-    'district': 'district',
-    'zonebeat': 'zonebeat',
-    'location': 'location',
-    'longitude': 'longitude',
-    'latitude': 'latitude',
+    'cadcdwid': 'CADCDWID',
+    'eventnum': 'EventNum',
+    'offensenum': 'OffenseNum',
+    'eventcode': 'EventCode',
+    'date': 'Date',
+    'descriptio': 'Descriptio',
+    'subgroup': 'SubGroup',
+    'group': 'Group',
+    'block': 'Block',
+    'district': 'District',
+    'zonebeat': 'ZoneBeat',
+    'census': 'Census',
+    'location': 'Location',
+    'longitude': 'Longitude',
+    'latitude': 'Latitude',
     'geom': 'POINT',
 }
 
 # Copypaste from geodjango tutorial.
-crime_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'Seattle_Police_Department_911_Incidents.shp'))
+crime_shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'Seattle_911.shp'))
 
 def run(verbose=True):
     lm = LayerMapping(CrimeModel, crime_shp, crime_mapping,

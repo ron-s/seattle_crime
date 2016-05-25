@@ -17,14 +17,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
-from seattle_crime_app import views as seattle_crime_app_views
 from rest_framework import routers
+from seattle_crime_app import views as seattle_crime_app_views
+
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'seattle_crime_app_crimemodel', seattle_crime_app_views.Crime2014DataViewSet)
+router.register(r'seattle_crime_app_crimemodel', seattle_crime_app_views.CrimeDataViewSet) # name of the table
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', seattle_crime_app_views.home_page),
-    url(r'^seattle_crime_app/', include(router.urls)),
+    url(r'^seattle_crime_app/', include(router.urls)), # name of the app
 ]
