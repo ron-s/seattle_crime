@@ -9,4 +9,4 @@ class CrimeDataSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = CrimeModel
         geo_field = 'geom'
-        fields = ('date', 'descriptio', 'group', 'subgroup', 'latitude', 'longitude',)
+        fields = ('date', 'descriptio', 'group', 'subgroup', 'block', 'latitude', 'longitude',)

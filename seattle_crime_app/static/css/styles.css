@@ -19,9 +19,7 @@ body{
     background-color:#49bfff;
 }
 
-/*.navbar-custom a{
-    color:#fefefe;
-}*/
+
 
 .navbar .checkbox{ 
     padding-top: .35em;
@@ -91,7 +89,7 @@ body{
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 500px;
 }
 
 .top_btn{

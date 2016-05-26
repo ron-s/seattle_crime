@@ -17,7 +17,11 @@ function renderMap(checkboxID){
               });
           markers.push(marker);
 
-          var content = '<div class="infowindow"><b>' + obj.properties.descriptio + '</b></div>' + '<div class="infowindow">' + obj.properties.date + '</div>' + '<div class="infowindow">' + obj.properties.group + '</div>' + '<div class="infowindow">' + obj.properties.blocklocat + '</div>';
+          var content = '<div class="infowindow"><b>' + obj.properties.descriptio + '</b></div>' 
+          + '<div class="infowindow">' + obj.properties.date + '</div>' 
+          + '<div class="infowindow">' + obj.properties.group + '</div>' 
+          + '<div class="infowindow">' + obj.properties.subgroup + '</div>'
+          + '<div class="infowindow">' + obj.properties.block + '</div>';
 
             var infowindow = new google.maps.InfoWindow();
             // add a click event listener when the user clicks on a marker to display the infowindow
